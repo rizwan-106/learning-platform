@@ -1,0 +1,179 @@
+/* Base styles for the FAQ container */
+.faq-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.faq-container h1 {
+    font-size: 2.8em;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.faq-container h1::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #007bff;
+    border-radius: 2px;
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* Space between FAQ items */
+}
+
+.faq-item {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    /* Ensures smooth collapse/expand */
+}
+
+.faq-question-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 25px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    transition: background-color 0.3s ease;
+}
+
+.faq-question-wrapper:hover {
+    background-color: #e5e5e5;
+}
+
+.faq-question {
+    font-size: 1.3em;
+    color: #34495e;
+    margin: 0;
+    flex-grow: 1;
+    /* Allows question to take available space */
+}
+
+.faq-toggle-icon {
+    font-size: 1.8em;
+    color: #007bff;
+    font-weight: bold;
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+/* Initially hide toggle icon for desktop, show for mobile */
+.faq-toggle-icon.mobile-only {
+    display: none;
+    /* Hidden by default for desktop */
+}
+
+.faq-answer-wrapper {
+    max-height: 0;
+    /* Hidden by default */
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+    /* Smooth transition */
+    padding: 0 25px;
+    /* No padding when collapsed */
+}
+
+.faq-answer-wrapper.open {
+    max-height: 500px;
+    /* Adjust as needed to fit content */
+    padding: 15px 25px 20px;
+    /* Padding when open */
+}
+
+.faq-answer {
+    font-size: 1.1em;
+    color: #555;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* --- Responsive Adjustments using Media Queries --- */
+
+/* Mobile-specific styles (screens up to 767px wide) */
+@media (max-width: 767px) {
+    .faq-container {
+        margin: 20px 15px;
+        padding: 15px;
+    }
+
+    .faq-container h1 {
+        font-size: 2.2em;
+        margin-bottom: 30px;
+    }
+
+    .faq-question-wrapper {
+        padding: 15px 20px;
+    }
+
+    .faq-question {
+        font-size: 1.15em;
+    }
+
+    /* Show the toggle icon on mobile */
+    .faq-toggle-icon.mobile-only {
+        display: block;
+    }
+
+    .faq-answer-wrapper.open {
+        padding: 10px 20px 15px;
+    }
+
+    .faq-answer {
+        font-size: 1em;
+    }
+}
+
+/* Tablet and Desktop styles (screens 768px and wider) */
+@media (min-width: 768px) {
+    .faq-item {
+        /* On tablet/desktop, answers are always visible */
+        border-bottom: 1px solid #e0e0e0;
+        /* Add separator */
+    }
+
+    .faq-question-wrapper {
+        cursor: default;
+        /* No pointer cursor as it's not clickable for toggle */
+        background-color: #ffffff;
+        /* White background for question wrapper */
+    }
+
+    .faq-question-wrapper:hover {
+        background-color: #ffffff;
+        /* No hover effect */
+    }
+
+    /* Hide the toggle icon on tablet/desktop */
+    .faq-toggle-icon.mobile-only {
+        display: none;
+    }
+
+    /* Answers are always open on tablet/desktop */
+    .faq-answer-wrapper {
+        max-height: none;
+        /* Remove max-height restriction */
+        padding: 15px 25px 20px;
+        /* Always apply padding */
+        overflow: visible;
+        /* Allow content to flow normally */
+    }
+}
