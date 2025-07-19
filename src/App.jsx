@@ -6,6 +6,7 @@ import OurTeam from "./components/OurTeam";
 import TermsOfService from "./components/footer/TermOfService";
 import PrivacyPolicy from "./components/footer/PrivacyPolicy";
 import ScrollToTop from "./components/footer/ScrollToTop";
+import ReturnRefundPolicy from "./components/footer/ReturnRefundPolicy";
 
 function App() {
   const myCompanyData = {
@@ -29,6 +30,15 @@ function App() {
       "https://aws.amazon.com/route53/registrar-policies/",
     gandiContractLink: "https://www.gandi.net/en/contracts",
     showDomainsSection: true,
+    returnPeriodDays: 30,
+    refundContactEmail: "refunds@bhoomitechzone.in",
+    allowCourseDownloadsForRefund: false,
+    allowCertAccessForRefund: false,
+    doesNotRefundEbooks: true,
+    annualMembershipRefunds: false,
+    iOSPurchasesHandledByApple: true,
+    appleRefundPolicyLink: "https://support.apple.com/en-us/HT210904",
+    refundProcessingDays: "5-7 business days",
     lastUpdatedDate: "19th July 2025",
   };
   return (
@@ -46,6 +56,10 @@ function App() {
           <Route
             path="/privacy"
             element={<PrivacyPolicy {...myCompanyData} />}
+          ></Route>
+          <Route
+            path="/refund"
+            element={<ReturnRefundPolicy {...myCompanyData} />}
           ></Route>
         </Routes>
         <Footer1 />
