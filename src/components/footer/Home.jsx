@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <div>
       <CourseCard />
-      <Footer1 />
+      {/* <Footer1 /> */}
     </div>
   );
 };

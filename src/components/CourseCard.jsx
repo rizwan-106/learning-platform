@@ -7,38 +7,45 @@ import java from "../assets/courseCard/java.webp";
 import mern from "../assets/courseCard/mern.png";
 import python from "../assets/courseCard/python.webp";
 import interview from "../assets/courseCard/tech_interview.webp";
+import { NavLink } from "react-router-dom";
 const items = [
   {
+    name: "cpp",
     img: cpp,
     sub: "C++ Programming Course Online",
     level: "Beginner to Advance",
     rating: "rating",
   },
   {
+    name: "java",
     img: java,
     sub: "Complete Java Programming Course",
     level: "Intermediate to Advance",
     rating: "rating",
   },
   {
+    name: "python",
     img: python,
     sub: "Python Programming Bootcamp",
     level: "Beginner to Advance",
     rating: "rating",
   },
   {
+    name: "mern",
     img: mern,
     sub: "Full Stack Developer : MERN",
     level: "Beginner to Advance",
     rating: "rating",
   },
   {
+    name: "dsa",
     img: dsa,
     sub: "Master DSA: Logic, Code, Success",
     level: "Beginner to Advance",
     rating: "rating",
   },
   {
+    name: "interview",
     img: interview,
     sub: "Ace the Interview: Tech Edition",
     level: "Beginner to Advance",
@@ -52,9 +59,10 @@ const CourseCard = () => {
       <h1 className="text-center text-3xl font-semibold sm:text-4xl">Course</h1>
       <div className=" grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 m-2 sm:mx-4 md:mx-6 lg:mx-8 gap-2">
         {items.map((card, index) => (
-          <div
+          <NavLink
+            to={`/course/${card.name}`}
             key={index}
-            className="shadow-2xl rounded-xl mx-1 md:mx-2 lg:mx-3 pb-2"
+            className="shadow-2xl rounded-xl mx-1 md:mx-2 lg:mx-3 pb-2 hover:bg-blue-100"
           >
             <img
               src={card.img}
@@ -67,7 +75,7 @@ const CourseCard = () => {
               <p className="">{card.level}</p>
             </div>
             <p className="px-3">{card.rating}</p>
-          </div>
+          </NavLink>
         ))}
       </div>
     </div>
