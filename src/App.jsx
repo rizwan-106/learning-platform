@@ -10,6 +10,8 @@ import ReturnRefundPolicy from "./components/footer/ReturnRefundPolicy";
 import CookiePolicy from "./components/footer/CookiePolicy";
 import FAQ from "./components/footer/FAQ";
 import ContactPage from "./components/footer/ContactPage";
+import CourseCard from "./components/CourseCard";
+import ViewPage from "./components/javaCourse/ViewPage";
 
 function App() {
   const myCompanyData = {
@@ -104,6 +106,8 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />}></Route>
+          <Route path="/course" element={<CourseCard />}></Route>
+          <Route path="/course/:name" element={<ViewPage />}></Route>
           <Route path="/team" element={<OurTeam />}></Route>
           <Route path="/contact" element={<ContactPage />}></Route>
           <Route

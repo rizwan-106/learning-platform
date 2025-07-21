@@ -7,7 +7,7 @@ const Navbar = () => {
       <ul className="flex justify-evenly bg-red-300">
         <NavLink to={"/"}>Home</NavLink>
         <NavLink>About</NavLink>
-        <NavLink>Courses</NavLink>
+        <NavLink to={"/course"}>Courses</NavLink>
         <NavLink>Contact us</NavLink>
         <NavLink to={"/team"}>Our Team</NavLink>
         <NavLink>Join us</NavLink>
