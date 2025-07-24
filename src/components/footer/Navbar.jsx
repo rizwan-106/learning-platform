@@ -11,6 +11,7 @@ const Navbar = () => {
         <NavLink>Contact us</NavLink>
         <NavLink to={"/team"}>Our Team</NavLink>
         <NavLink>Join us</NavLink>
+        <NavLink to={"/profile"}>Profile</NavLink>
       </ul>
     </nav>
     // <nav className="w-full border-2 h-auto sticky top-0 z-50 bg-white">

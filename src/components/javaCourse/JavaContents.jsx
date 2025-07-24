@@ -1,4 +1,5 @@
 import React from "react";
+import { toast } from "react-toastify";
 const JavaContents = [
   {
     key: "Intro",
@@ -35,6 +36,48 @@ const JavaContents = [
     ),
   },
 
+  //   {
+  //     key: "Syntax",
+  //     data: (
+  //       <div className="flex flex-col gap-2">
+  //         <h1 className="text-2xl font-semibold">Java Syntax</h1>
+  //         <p>
+  //           First we create a file according to our requirement with .java
+  //           extension, then write this syntax on your IDE and make sure to make
+  //           class name (on ide) same as file name.
+  //         </p>
+  //         <p className="text-lg font-semibold">Example:</p>
+  //         <div className="shadow-lg rounded-md p-4 bg-gray-300">
+  //           <pre className="overflow-auto whitespace-pre-wrap">
+  //             {`class Main{
+  //     public static void main(String [] args){
+  //         System.out.println("Hello World!")
+  //     }
+  // }`}
+  //           </pre>
+  //         </div>
+  //         <h1 className="text-xl font-semibold">Example Explained</h1>
+  //         <p>
+  //           Every line of code that runs in Java must be inside a{" "}
+  //           <span className="text-red-500">class</span> And the class name should
+  //           always start with an uppercase first letter. In our example, we named
+  //           the class Main.
+  //         </p>
+  //         <p>
+  //           <span className=" font-bold">Note</span>: Java is case-sensitive:
+  //           "MyClass" and "myclass" has different meaning.
+  //         </p>
+  //         <p>
+  //           {" "}
+  //           The name of the java file must match the class name. When saving the
+  //           file, save it using the class name and add ".java" to the end of the
+  //           filename. To run the example above on your computer, make sure that
+  //           Java is properly installed: Go to the Get Started Chapter for how to
+  //           install Java.
+  //         </p>
+  //       </div>
+  //     ),
+  //   },
   {
     key: "Syntax",
     data: (
@@ -45,9 +88,27 @@ const JavaContents = [
           extension, then write this syntax on your IDE and make sure to make
           class name (on ide) same as file name.
         </p>
-        <div className="shadow-lg rounded-md p-4 bg-gray-300">
-          <p className="text-lg font-semibold">Example:</p>
-          <pre>
+        <p className="text-lg font-semibold">Example:</p>
+
+        {/* 🧠 Start of code block with copy */}
+        <div className="relative shadow-lg rounded-md p-4 bg-gray-300">
+          <button
+            onClick={() => {
+              const code = `class Main{
+    public static void main(String [] args){
+        System.out.println("Hello World!")
+    }
+}`;
+              navigator.clipboard.writeText(code);
+              // alert("Copied!");
+              toast.success("Copied")
+            }}
+            className="absolute top-2 right-2 bg-gray-200 hover:bg-gray-300 p-1 rounded text-sm"
+          >
+            Copy
+          </button>
+
+          <pre className="overflow-auto whitespace-pre-wrap">
             {`class Main{
     public static void main(String [] args){
         System.out.println("Hello World!")
@@ -55,6 +116,8 @@ const JavaContents = [
 }`}
           </pre>
         </div>
+        {/* 🧠 End of code block with copy */}
+
         <h1 className="text-xl font-semibold">Example Explained</h1>
         <p>
           Every line of code that runs in Java must be inside a{" "}
@@ -67,7 +130,6 @@ const JavaContents = [
           "MyClass" and "myclass" has different meaning.
         </p>
         <p>
-          {" "}
           The name of the java file must match the class name. When saving the
           file, save it using the class name and add ".java" to the end of the
           filename. To run the example above on your computer, make sure that
@@ -89,30 +151,31 @@ const JavaContents = [
         <p className="text-lg">
           Variables are containers for storing data values. In Java, there are
           different types of variables, for example:
-          <ul className="list-disc mx-4">
-            <li>
-              <span className="text-red-600">String</span>- stores text, such as
-              "Hello". String values are surrounded by double quotes
-            </li>
-            <li>
-              <span className="text-red-600">int</span>- stores integers (whole
-              numbers), without decimals, such as 123 or -123
-            </li>
-            <li>
-              <span className="text-red-600">float</span>- stores floating point
-              numbers, with decimals, such as 19.99 or -19.99
-            </li>
-            <li>
-              <span className="text-red-600">char</span>- stores single
-              characters, such as 'a' or 'B'. Char values are surrounded by
-              single quotes
-            </li>
-            <li>
-              <span className="text-red-600">boolean</span>- stores values with
-              two states: true or false
-            </li>
-          </ul>
         </p>
+        <ul className="list-disc mx-4">
+          <li>
+            <span className="text-red-600">String</span>- stores text, such as
+            "Hello". String values are surrounded by double quotes
+          </li>
+          <li>
+            <span className="text-red-600">int</span>- stores integers (whole
+            numbers), without decimals, such as 123 or -123
+          </li>
+          <li>
+            <span className="text-red-600">float</span>- stores floating point
+            numbers, with decimals, such as 19.99 or -19.99
+          </li>
+          <li>
+            <span className="text-red-600">char</span>- stores single
+            characters, such as 'a' or 'B'. Char values are surrounded by single
+            quotes
+          </li>
+          <li>
+            <span className="text-red-600">boolean</span>- stores values with
+            two states: true or false
+          </li>
+        </ul>
+
         <hr />
         <div className="text-lg flex flex-col gap-2">
           <h2 className="text-xl">Variable Declaration and Initialization</h2>

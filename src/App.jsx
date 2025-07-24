@@ -11,7 +11,9 @@ import CookiePolicy from "./components/footer/CookiePolicy";
 import FAQ from "./components/footer/FAQ";
 import ContactPage from "./components/footer/ContactPage";
 import CourseCard from "./components/CourseCard";
-import ViewPage from "./components/javaCourse/ViewPage";
+import ViewPage from "./components/ViewPage";
+import ProfileSection from "./practice/ProfileSection";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   const myCompanyData = {
@@ -102,10 +104,12 @@ function App() {
   return (
     <div>
       <BrowserRouter>
+        <ToastContainer position="top-right" autoClose={2500}/>
         <ScrollToTop />
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />}></Route>
+          <Route path="/profile" element={<ProfileSection />}></Route>
           <Route path="/course" element={<CourseCard />}></Route>
           <Route path="/course/:name" element={<ViewPage />}></Route>
           <Route path="/team" element={<OurTeam />}></Route>
@@ -136,6 +140,9 @@ function App() {
         <Footer1 />
       </BrowserRouter>
     </div>
+
+    // <h1>Hello</h1>
+    // <ProfileSection />
   );
 }
 
