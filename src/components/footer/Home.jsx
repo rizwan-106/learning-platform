@@ -1,5 +1,5 @@
 import React from "react";
-import CourseCard from "../CourseCard";
+import CourseCard from "../layout/CourseCard";
 import Footer1 from "./Footer1";
 
 const Home = () => {
