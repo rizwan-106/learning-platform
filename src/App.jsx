@@ -12,7 +12,7 @@ import FAQ from "./components/footer/FAQ";
 import ContactPage from "./components/footer/ContactPage";
 import CourseCard from "./components/layout/CourseCard";
 import ViewPage from "./components/layout/ViewPage";
-import ProfileSection from "./practice/ProfileSection";
+import ProfileSection from "./components/footer/ProfileSection";
 import { ToastContainer } from "react-toastify";
 
 function App() {
@@ -25,8 +25,7 @@ function App() {
     countryOfOperation: "India",
 
     // Cookie Policy specific links and partners
-    googleAnalyticsPartnerSiteLink:
-      "https://policies.google.com/technologies/partner-sites",
+    googleAnalyticsPartnerSiteLink: "https://policies.google.com/technologies",
     allAboutCookiesLink: "https://www.allaboutcookies.org",
     googleAdsSettingsLink: "https://adssettings.google.com/authenticated",
     adPartners: [
@@ -104,16 +103,16 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-        <ToastContainer position="top-right" autoClose={2500}/>
+        <ToastContainer position="top-right" autoClose={2500} />
         <ScrollToTop />
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />}></Route>
-          <Route path="/profile" element={<ProfileSection />}></Route>
           <Route path="/course" element={<CourseCard />}></Route>
           <Route path="/course/:name" element={<ViewPage />}></Route>
           <Route path="/team" element={<OurTeam />}></Route>
           <Route path="/contact" element={<ContactPage />}></Route>
+          <Route path="/profile" element={<ProfileSection />}></Route>
           <Route
             path="/terms"
             element={<TermsOfService {...myCompanyData} />}

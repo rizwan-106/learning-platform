@@ -9,7 +9,7 @@ const handleCopy = (code) => {
 // Reusable Components
 export const CourseTitle = ({ children, level = 1 }) => {
   // console.log(children);
-  
+
   const HeadingTag = `h${level}`;
   const sizeClasses = {
     1: "text-2xl",
@@ -41,7 +41,7 @@ export const List = ({ items, ordered = false }) => {
   );
 };
 
-export const CodeBlock = ({ code, title, language = "java" }) => (
+export const CodeBlock = ({ code, title }) => (
   <div className="mb-4">
     {title && <p className="text-lg font-semibold mb-2">{title}</p>}
     <div className="relative shadow-lg rounded-md p-4 bg-gray-300">

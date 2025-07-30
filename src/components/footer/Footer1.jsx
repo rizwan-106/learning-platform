@@ -1,6 +1,9 @@
 import React from "react";
-import { Facebook, Twitter, Youtube, Linkedin, Instagram } from "lucide-react";
 import { NavLink } from "react-router-dom";
+import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { IoLogoYoutube } from "react-icons/io5";
+import { BsInstagram } from "react-icons/bs";
 
 const Footer1 = () => {
   const topTutorials = [
@@ -92,7 +95,7 @@ const Footer1 = () => {
     </div>
   );
   return (
-    <footer className="bg-slate-800 text-white py-10 mt-12">
+    <footer className="bg-slate-800 text-white py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
@@ -134,36 +137,36 @@ const Footer1 = () => {
           </div>
 
           {/* Social Icons */}
-          <div className="flex items-center gap-4">
+          <div className="flex  [@media(max-width:320px)]:gap-2 gap-4 ">
             <a
               href="#"
               className="w-10 h-10 bg-slate-600 rounded-lg flex items-center justify-center hover:bg-blue-500 transition-colors duration-300"
             >
-              <Facebook size={20} />
+              <FaFacebookF size={20} />
             </a>
             <a
               href="#"
               className="w-10 h-10 bg-slate-600 rounded-lg flex items-center justify-center hover:bg-blue-400 transition-colors duration-300"
             >
-              <Twitter size={20} />
+              <FaXTwitter size={20} />
             </a>
             <a
               href="#"
               className="w-10 h-10 bg-slate-600 rounded-lg flex items-center justify-center hover:bg-red-500 transition-colors duration-300"
             >
-              <Youtube size={20} />
+              <IoLogoYoutube size={20} />
             </a>
             <a
               href="#"
               className="w-10 h-10 bg-slate-600 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors duration-300"
             >
-              <Linkedin size={20} />
+              <FaLinkedinIn size={20} />
             </a>
             <a
               href="#"
               className="w-10 h-10 bg-slate-600 rounded-lg flex items-center justify-center hover:bg-pink-500 transition-colors duration-300"
             >
-              <Instagram size={20} />
+              <BsInstagram size={20} />
             </a>
           </div>
 
